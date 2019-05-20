@@ -4,7 +4,19 @@
 #include "Motocicleta.h"
 #include <fstream>
 
-//enum autoT {Dacia_Logan,BMW_Seria3,Peugeot207};
+      /*
+         MODELE MASINI: Dacia_Logan, MazdaRX8,Peugeot207
+         MODELE MOTOCICLETE: moto1, moto2, moto3
+         
+         Masina obj(model masina)
+         Motocicleta obj(model motocicleta)
+         
+         DATE FISIER:
+         AN FABRICATIE
+         KM LA BORD
+         VOLUM MOTOR (FLOAT)
+         
+         */
 
 using namespace std;
 
