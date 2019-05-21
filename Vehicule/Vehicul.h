@@ -1,7 +1,6 @@
 #ifndef TEMA_POO3_VEHICUL_H
 #define TEMA_POO3_VEHICUL_H
 
-#include "Frane.h"
 #include <iostream>
 
 using namespace std;
@@ -22,7 +21,6 @@ class Vehicul {
 protected:
     int r;  // roti
     caract<T> c;
-    Frane *f;
 
     explicit Vehicul(T,int r1 = 0);
     Vehicul(const Vehicul&ob);
@@ -55,29 +53,21 @@ template<typename T>
 Vehicul<T>::Vehicul(T mdl,int r1)
 {
     r = r1;
-    f = new Frane[r];
     c.model = mdl;
     c.an_fab = 0;
     c.km = 0.0;
 }
 
 template<typename T>
-Vehicul<T>::~Vehicul()
-{
-    delete[]f;
-}
+Vehicul<T>::~Vehicul() = default;
 
 template<typename T>
 Vehicul<T>::Vehicul(const Vehicul &ob)
 {
     r = ob.r;
-    f = new Frane[r];
     c.model = ob.c.model;
     c.an_fab = ob.c.an_fab;
     c.km = ob.c.km;
-
-    for(int i = 0;i < r;i++)
-        f[i] = ob.f[i];
 }
 
 template<typename T>
