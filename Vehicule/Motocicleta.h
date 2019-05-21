@@ -3,17 +3,16 @@
 
 #include "Vehicul.h"
 #include "Motor_moto.h"
-#include "Directie_moto.h"
 #include "Solutii_motor.h"
 #include "Solutii_frane.h"
 
+using namespace std;
+
 class Motocicleta: public Vehicul<motoT>{
 
-protected:
     Motor_moto mm;
-    Directie_moto *dmoto;
-
-public:
+    
+ public:
     explicit Motocicleta(motoT,int k = 2);
     Motocicleta(const Motocicleta&);
     ~Motocicleta() override;
