@@ -2,42 +2,26 @@
 
 Masina::Masina(autoT mdl1,int k): Vehicul<autoT >(mdl1,4)
 {
-    d = new Directie_auto[4];
 }
 
 
-Masina::~Masina()
-{
-    delete[]d;
-}
+Masina::~Masina() = default;
 
 Masina::Masina(const Masina &obj): Vehicul<autoT>(obj)
 {
-   d = new Directie_auto[r];
-   for(int i = 0;i < r;i++)
-       d[i] = obj.d[i];
+    crs = obj.crs;
+    m = obj.m;
 }
 
 Masina &Masina::operator=(Masina ob){
 
     r = ob.r;
-    delete[]f;
-    delete[]d;
-    f = new Frane[r];
-    d = new Directie_auto[r];
     crs = ob.crs;
     m = ob.m;
     c.model = ob.c.model;
     c.an_fab = ob.c.an_fab;
     c.km = ob.c.km;
-
-
-    for(int i = 0;i < r;i++)
-    {
-        f[i] = ob.f[i];
-        d[i] = ob.d[i];
-    }
-
+    
     return *this;
 }
 
