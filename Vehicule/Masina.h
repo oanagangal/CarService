@@ -3,7 +3,6 @@
 
 #include "Vehicul.h"
 #include "Motor_auto.h"
-#include "Directie_auto.h"
 #include "Caroserie.h"
 #include "Solutii_frane.h"
 #include "Solutii_motor.h"
@@ -15,10 +14,9 @@ using namespace std;
 
 class Masina : public Vehicul<autoT> {
 
-protected:
     Motor_auto m;
-    Directie_auto *d;
     Caroserie crs;
+protected:
     double calcul_cost_caroserie();
 
 public:
@@ -28,8 +26,6 @@ public:
 
     Masina &operator=(Masina);
     void calcul_cost() override;
-
-
 
 };
 
