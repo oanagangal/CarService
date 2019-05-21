@@ -1,46 +1,23 @@
-//
-// Created by Dragos on 18/05/2019.
-//
-
 #include "Motocicleta.h"
 
 Motocicleta::Motocicleta(motoT mt, int k) : Vehicul<motoT>(mt,k)
 {
-    dmoto = new Directie_moto[r];
 }
 
 Motocicleta::Motocicleta(const Motocicleta &o): Vehicul<motoT>(o)
 {
-    dmoto = new Directie_moto[r];
-
-    for(int i = 0;i < r;i++)
-        dmoto[i] = o.dmoto[i];
+    mm = o.mm;
 }
 
-Motocicleta::~Motocicleta()
-{
-    delete[]dmoto;
-}
+Motocicleta::~Motocicleta() = default;
 
 Motocicleta &Motocicleta::operator=(Motocicleta moto){
 
-    delete[]dmoto;
-    delete[]f;
     r = moto.r;
-    dmoto = new Directie_moto[r];
-    f = new Frane[r];
     mm = moto.mm;
     c.model = moto.c.model;
     c.an_fab = moto.c.an_fab;
     c.km = moto.c.km;
-
-
-
-    for(int i = 0;i < r;i++)
-    {
-        dmoto[i] = moto.dmoto[i];
-        f[i] = moto.f[i];
-    }
 
     return *this;
 }
