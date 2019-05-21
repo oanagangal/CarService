@@ -16,6 +16,7 @@ class Masina : public Vehicul<autoT> {
 
     Motor_auto m;
     Caroserie crs;
+    
 protected:
     double calcul_cost_caroserie();
 
